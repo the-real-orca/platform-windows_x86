@@ -70,12 +70,12 @@ AlwaysBuild(target_size)
 
 
 #
-# Target: Upload -> run program
+# Target: Execute -> run program
 #
 
-target_upload = env.Alias("upload", target_bin, env.VerboseAction(
-    ".\$SOURCE", "execute $SOURCE:"))
-AlwaysBuild(target_upload)
+target_execute = env.Alias(["upload", "execute"], target_bin, env.VerboseAction(
+    ".\$SOURCE", "Execute $SOURCE"))
+AlwaysBuild(target_execute)
 
 
 #
