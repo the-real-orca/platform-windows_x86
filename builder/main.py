@@ -68,6 +68,16 @@ target_size = env.Alias("size", target_bin, env.VerboseAction(
     "$SIZEPRINTCMD", "Calculating size $SOURCE"))
 AlwaysBuild(target_size)
 
+
+#
+# Target: Upload -> run program
+#
+
+target_upload = env.Alias("upload", target_bin, env.VerboseAction(
+    ".\$SOURCE", "execute $SOURCE:"))
+AlwaysBuild(target_upload)
+
+
 #
 # Default targets
 #
